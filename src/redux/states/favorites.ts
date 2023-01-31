@@ -16,3 +16,5 @@ export const favoriteSlice = createSlice({
     }
   },
 });
+
+export const { addFavorite } = favoriteSlice.actions;
