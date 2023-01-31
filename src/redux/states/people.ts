@@ -1,15 +1,8 @@
-import { Person } from "@/models";
+import { LocalStorageTypes, Person } from "@/models";
+import { getLocalStorage, setLocalStorage } from "@/utilities";
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState : Person[] = [];
-
-const setLocalStorage = (key: string, value: any) => {
-  localStorage.setItem(key, JSON.stringify(value));
-};
-
-const getLocalStorage = (key: string) => {
-    return localStorage.getItem(key);
-}
+const initialState: Person[] = [];
 
 export const peopleSlice = createSlice({
   name: "people",
@@ -21,9 +14,5 @@ export const peopleSlice = createSlice({
       setLocalStorage(LocalStorageTypes.PEOPLE, state);
       return action.payload;
     },
-    addFavorite: (state, action) => {
-        setLocalStorage(LocalStorageTypes.PEOPLE, state);
-        return action.payload;
-    }
   },
 });
