@@ -7,7 +7,7 @@ import { LayoutContainer } from "./styled-components";
 
 function App() {
   return (
-    <Provider store={store} >
+    <Provider store={store}>
       <Navbar />
       <LayoutContainer>
         <Home />

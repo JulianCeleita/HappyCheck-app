@@ -1,3 +1,3 @@
 export { default as Home } from './Home';
-export * from './components/PeopleTable';
+export { default as PeopleTable } from './components/PeopleTable/PeopleTable';
 export * from './components';
