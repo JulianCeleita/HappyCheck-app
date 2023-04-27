@@ -3,7 +3,7 @@ import { removeFavorite } from "@/redux/states";
 import { AppStore } from "@/redux/store";
 import { Delete } from "@mui/icons-material";
 import { Button } from "@mui/material";
-import { DataGrid, GridColumns, GridRenderCellParams } from "@mui/x-data-grid";
+import { DataGrid, GridColDef, GridRenderCellParams } from "@mui/x-data-grid";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -18,7 +18,7 @@ const FavoriteTable: React.FC<FavoriteTableInterface> = () => {
     dispatch(removeFavorite(person));
   };
 
-  const columns: GridColumns = [
+  const columns: GridColDef[] = [
     {
       field: "actions",
       type: "actions",
@@ -34,7 +34,6 @@ const FavoriteTable: React.FC<FavoriteTableInterface> = () => {
             component="label"
             onClick={() => handleClick(params.row)}
           >
-            {" "}
             <Delete />
           </Button>
         </>

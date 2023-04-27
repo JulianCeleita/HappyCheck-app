@@ -2,7 +2,7 @@ import { Person } from "@/models";
 import { addFavorite } from "@/redux/states";
 import { AppStore } from "@/redux/store";
 import { Checkbox } from "@mui/material";
-import { DataGrid, GridRenderCellParams } from "@mui/x-data-grid";
+import { DataGrid, GridColDef, GridRenderCellParams } from "@mui/x-data-grid";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -26,11 +26,11 @@ const PeopleTable: React.FC<PeopleTableInterface> = () => {
     setSelectedPeople(filteredPeople);
   };
 
-  const columns = [
+  const columns:GridColDef[] = [
     {
       field: "actions",
       type: "actions",
-      sortable: "false",
+      sortable: false,
       headerName: "",
       width: 50,
       renderCell: (params: GridRenderCellParams | any) => (
